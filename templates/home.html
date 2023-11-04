@@ -10,29 +10,35 @@
         height: 360px;
         width: 100%;
         object-fit: cover;
+        margin-bottom: 16px;
         
       }
     </style>
 
     </head>
   <body>
+    {% include 'nav.html'%}
+    <img class = "img-fluid" id="banner" src="https://careerswebsite--arnavnigam754.repl.co/static/unsplash.jpg" height = "320">
     <div class = "container">
    <h1 class="text-center mt-2 mb-4">Tech Careers</h1>
-    <img class = "img-fluid" id="banner" src="https://careerswebsite--arnavnigam754.repl.co/static/unsplash.jpg" height = "320">
-    
-    <h2 class="text-center"> About Us </h2>
-      
+      <div class = "row" style = "margin-bottom:16px">
+        <div class = "col-6"
     <p class = "lead">  Welcome to Tech Careers, your one-stop destination for all things related to tech careers. Whether you're a seasoned professional looking for your next job opportunity or a student eager to kickstart your career in the tech industry, we've got you covered. </p>
-
+        </div>
+        <div class = "col-6">
+        <img src= "static/workplaceimg.jpg" style = "height:320px; border-radius:4px;">
+        </div>
+      </div>
     <h2 class = "text-center mt-2 mb-4">Open Tech Roles</h2>
       <div>
         {% for job in jobs %}
         {% include 'jobitem.html' %}
         {% endfor %}
       <div class = "text-center">
-    <button class = "btn btn-primary btn-lg"> Contact Us </button>
-        <p class = "mt-4">Copyright 2023, Tech Careers</p>
+    <a href = "mailto:hello@techcareers.ai?subject=Contact%20Support&body=NAME%3A%0D%0A%0D%0AQUERY%3A%0D%0A%0D%0ACONTACT%20NUMBER%3A%0D%0A%0D%0A"class = "btn btn-primary btn-lg"> Contact Us </a>
       </div>
     </div>
+
+      {% include 'footer.html'%}
   </body>
 </html>
